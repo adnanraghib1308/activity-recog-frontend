@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils_3d/control_utils_3d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+    <script src="script.js" ></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sub-container">
+            <h2>Human Activity Recognition Application</h2>
+            <p>Select a video and our machine learning model will predict the action in the video with an accuracy of over 90 %. Our classification includes the following class.</p>
+            <div class="label-container">
+                <span class="label-tag">WalkingWithDog</span>
+                <span class="label-tag">HighJump</span>
+                <span class="label-tag">HorseRiding</span>
+                <span class="label-tag">JavelinThrow</span>
+                <span class="label-tag">PlayingGuitar</span>
+            </div>
+        </div>
+        <div class="sub-container">
+            <input type="file" id="fileUpload" class="upload-button" onchange="uploadVideo()"/>
+            <div class="recognition-container">
+                <div>
+                    <video width="400" height="240" id="video" controls><source id="video-source"/></video>
+                    <canvas class="output_canvas" width="400" height="240"></canvas>
+                </div>
+                <div >
+                    <span class="result">
+                        <h3 class="label">Result: </h3>
+                        <p id="result"></p>
+                    </span>
+                    <span class="result">
+                        <h3 class="label">Accuracy: </h3>
+                        <p id="accuracy"></p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
